@@ -1,36 +1,74 @@
-# PDF Filigran Temizleme
+# PDF Filigran Temizleme — FiligranTemizleyici V2
 
-**Windows x64 · Portable · PDF filigran inceleme ve kaldırma**
+**Yayıncı: DEMİRHAN ÖZDEMİR** · **Ana dil: Türkçe** · **Platform: Windows x64 · Portable**
 
-PDF belgelerindeki filigran adaylarını tespit edip seçilen öğeleri kaldırmayı hedefleyen bağımsız Windows aracı.
+![Türkçe](https://img.shields.io/badge/Dil-Türkçe-blue) ![PDF](https://img.shields.io/badge/İşlem-PDF%20Filigran-informational) ![Önizleme](https://img.shields.io/badge/Yayın-Önizleme-orange)
 
-**[FİLİGRAN TEMİZLEME.zip indir — GitHub Releases](https://github.com/rusebound/PDF-Watermark-Remover/releases)**
+PDF belgelerinde bulunan filigranları inceleyip kaldırma işlemi uygulamak amacıyla hazırlanmış bağımsız masaüstü yazılımı. Belgenin orijinal içeriğinin korunması öncelikli hedeftir; ancak **her filigranın hasarsız kaldırılması garanti edilemez**.
 
-## Kurulum ve kullanım
+**[⬇ Filigran Temizleme — Portable Sürümü İndir](https://github.com/rusebound/PDF-Watermark-Remover/releases/tag/initial-binary)**
 
-1. ZIP dosyasını tamamen çıkarın.
-2. `FiligranTemizleyiciV2/FiligranTemizleyiciV2.exe` uygulamasını çalıştırın.
-3. İncelenecek PDF'yi seçin; uygulamadaki tarama/inceleme ve kaldırma adımlarını takip edin.
-4. Oluşan çıktıyı açıp metin, görüntü, tablo, sayfa sırası ve görsel bütünlüğünü kontrol edin.
+## Ne sağlar?
 
-**Önemli:** Yalnızca değiştirme yetkiniz olan dosyalarda kullanın. İşleme başlamadan önce belgenin yedeğini alın. Filigran resmin bir parçasıysa veya sayfa içeriğiyle iç içeyse temizleme alttaki metin veya görüntüye zarar verebilir. **Tüm filigranları hatasız kaldırma garantisi verilmez.**
+| Kullanıcı ihtiyacı | Hedeflenen fayda |
+|---|---|
+| PDF üzerindeki tekrar eden filigranları incelemek | Belgedeki filigran adaylarını belirlemek |
+| Dikkat dağıtan arka plan yazıları | Uygun filigranların kaldırılmasını denemek |
+| Çok sayfalı belgeleri düzenlemek | Belgenin okunabilirliğini artırmaya çalışmak |
+| Belgede asıl içeriği korumak | Filigran kaldırma sonucunu gözle değerlendirmek |
 
-## İçerik ve teknik durum
+## Temel özellikler
 
-Arşivde `FiligranTemizleyiciV2.exe` ve birlikte çalışan `_internal` bağımlılıkları bulunur. **Bu depo şu an binary dağıtım ve açıklama amaçlıdır; uygulamanın tüm geliştirme kaynak kodu burada yayımlanmış değildir.** Üçüncü taraf lisans ve güvenlik incelemesi ayrıca yapılmalıdır.
+- **Belge seçme:** İncelenecek PDF dosyasını uygulamaya ekleme.
+- **Filigran incelemesi:** İşlenebilecek öğeleri tespit etmeyi hedefleyen çalışma.
+- **Kaldırma adımı:** Uygun filigranları kaldırmaya yönelik işlev.
+- **Taşınabilir dağıtım:** Windows uygulaması ZIP olarak sunulur; tüm destek dosyaları birlikte çıkarılır.
+- **Sonuç denetimi:** Çıktıyı kaynak belgeyle karşılaştırarak kontrol etme önerilir.
 
-## SHA-256
+> **Teknik uyarı:** PDF filigranı ayrı bir nesne, vektörel çizim, metin veya taranmış görüntünün parçası olabilir. İşlem sonucu filigranın türüne ve yerleşimine bağlıdır. Bu sürüm için bütün PDF'lerde çalışan kusursuz otomatik tespit veya kayıpsız temizleme iddiası yoktur.
 
-`FİLİGRAN TEMİZLEME.zip`:
+## Nasıl kullanılır?
+
+1. [Sürüm indirme sayfasından](https://github.com/rusebound/PDF-Watermark-Remover/releases/tag/initial-binary) `FILIGRAN.TEMIZLEME.zip` dosyasını indirin.
+2. ZIP'i tamamen çıkarın; `_internal` klasörünü programla birlikte koruyun.
+3. `FiligranTemizleyiciV2/FiligranTemizleyiciV2.exe` dosyasını çalıştırın.
+4. PDF belgesini seçin ve uygulamanın sunduğu tarama/inceleme adımlarını uygulayın.
+5. Kaldırma işlemi sonrasında yeni PDF'yi açarak **metin, resim, tablo, imza ve sayfa düzenini** orijinaliyle karşılaştırın.
+
+## Önemli güvenlik ve kullanım kuralları
+
+- **Yalnızca düzenleme yetkiniz bulunan PDF belgelerinde kullanın.**
+- Önemli belgelerin önce yedeğini alın.
+- İmza, QR kod, tarih, resmi işaret veya belgeyi doğrulayan öğeleri silmek belgenin geçerliliğini etkileyebilir.
+- Taranmış görüntü üzerindeki filigran kaldırılırken alttaki bilgi de zarar görebilir.
+- Bu yayım için farklı gerçek belgelerde bağımsız kaldırma başarısı ve içerik bütünlüğü doğrulanmadı.
+
+## Sık sorulan sorular
+
+**Tüm filigranlar %100 silinir mi?** Hayır. Filigranın belge içindeki yapısına göre sonuç değişir.
+
+**Çıktı birebir aynı kalır mı?** Görsel ve yapısal bütünlük garanti değildir; kontrol etmek gerekir.
+
+**Kurulum gerekli mi?** Paket portable'dır; ZIP'in tamamı çıkarılıp Windows `.exe` çalıştırılır. Kurum bilgisayarlarında güvenlik politikası çalıştırmayı engelleyebilir.
+
+## Teknik paket ve lisans
+
+`FiligranTemizleyiciV2.exe` ile çalışma zamanı ve üçüncü taraf bağımlılıkları dağıtılır. **GitHub deposu binary dağıtım ve tanıtım amaçlıdır; özgün kaynak kodun eksiksiz yayımlandığı iddia edilmez.** Lisans ve güvenlik uyumluluğu ayrı inceleme gerektirir.
+
+## SHA-256 doğrulaması
+
+`FILIGRAN.TEMIZLEME.zip`:
 
 `C2E018809B5DCD573F62CF3CE393614E1ED10E5629FF65ED598DFA0323E144A2`
 
-PowerShell: `Get-FileHash '.\FİLİGRAN TEMİZLEME.zip' -Algorithm SHA256`
+PowerShell: `Get-FileHash '.\FILIGRAN.TEMIZLEME.zip' -Algorithm SHA256`
 
-## Yayın durumu
+**Yayın durumu:** Önizleme. GitHub yükleme ve dosya bütünlüğü doğrulandı; bağımsız uçtan uca gerçek PDF testi ve kod imzası doğrulanmadı.
 
-**Önizleme (pre-release).** Arşivin çalıştırılabilir içerdiği kontrol edildi; farklı PDF türleriyle bağımsız başarı, veri koruma ve kod imzalama testi bu yayımda yapılmadı.
+**Destek:** [GitHub Issues](https://github.com/rusebound/PDF-Watermark-Remover/issues) — gerçek/hassas PDF belgelerini herkese açık bildirimlere yüklemeyin.
 
-**English:** Portable Windows PDF watermark review and removal utility. Use only on documents you are authorized to edit. Always inspect output fidelity.
+---
 
-Destek: [Issues](https://github.com/rusebound/PDF-Watermark-Remover/issues). Gerçek kişisel belge içeriklerini açık issue kayıtlarına yüklemeyin.
+**Yayıncı: DEMİRHAN ÖZDEMİR** · [GitHub profili](https://github.com/rusebound)
+
+**English (short summary):** Portable Windows PDF watermark inspection and removal utility. Use only on documents you are authorized to modify; perfect cleanup and content preservation are not guaranteed.
